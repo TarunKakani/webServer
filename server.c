@@ -12,15 +12,15 @@
 // Some Good examples of client/server pairs are:
 // - telnet/telnetd
 // - ftp/ftpd
-// - firefox/apache
+// - firefox/apache or httpd
 // So everytime you use ftp there's a remote program ftpd that serves you.
 
-// often there is only one server on a machine - this server handles multiple clients using fork()
+// often there is only one server on a machine - this server handles multiple clients using fork() (multi-threading)
 // the basic process is the server will wait for a connection, accept() it and fork() a child process to handle it
 
 // this is what our simple server will do below
 
-//connect it with: telnet remotehostname 3490 - where remotehostname is the name of the machine you are running it on
+//connect it with: telnet remotehostname 3490 - where remotehostname is the name/ip of the machine you are running it on
 
 
 
@@ -139,6 +139,7 @@ int main(void){
             continue;
         }
 
+        // inet_ntop : raw network into presentation
         inet_ntop(their_addr.ss_family, get_in_addr((struct sockaddr *)&their_addr), s, sizeof s);
         printf("Server: got connection from %s\n", s);
 
