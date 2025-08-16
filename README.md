@@ -1,6 +1,6 @@
-# Simple Web Server in C
+# Simple TCP server in C
 
-This project is a basic web server implemented from scratch in pure C, following [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/).  
+This project is a basic tcp server implemented from scratch in pure C, following [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/).  
 Currently, it only supports connections on `localhost`. Future updates will aim for public accessibility.
 
 ## Compilation
